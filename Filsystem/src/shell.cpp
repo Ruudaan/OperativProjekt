@@ -25,6 +25,7 @@ int main(void) {
 	std::string currentDir = "/";    // current directory, used for output
 
     bool bRun = true;
+    FileSystem fs;
 
     do {
         std::cout << user << ":" << currentDir << "$ ";
@@ -37,7 +38,7 @@ int main(void) {
             switch(cIndex) {
 
 			case 0: //quit
-				bRun = quit();                
+				bRun = quit();
                 break;
             case 1: // format
                 break;
@@ -64,7 +65,8 @@ int main(void) {
                 break;
             case 12: // cd
                 break;
-            case 13: // pwd
+            case 13:  // pwd
+          std::cout << fs.pwd() << std::endl;
                 break;
             case 14: // help
                 std::cout << help() << std::endl;
